@@ -1,0 +1,8 @@
+{
+    "controls": false,
+    "progress": false,
+    "history": true,
+    "transition": "default",
+    "transitionSpeed": "fast",
+    "backgroundTransition": "default"
+}
