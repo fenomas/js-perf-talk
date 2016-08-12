@@ -200,7 +200,7 @@ for (var n=0; n<1000; n++) {
 
 <br>
 
-## (╯°□°）╯︵ ┻━┻
+## （╯°□°）╯︵ ┻━┻
 
 <br>
 
@@ -423,10 +423,8 @@ function bar() {
 # Example: DCE
 
 ```js
-var foo = false
-
 for (var i=0; i<arr.length; i++) {
-    if (foo) arr[i] = Math.sqrt(i)
+    if (false) arr[i] = Math.sqrt(i)
 }
 //
 ```
@@ -434,6 +432,18 @@ for (var i=0; i<arr.length; i++) {
 <!-- .slide: data-state="codeEditable1" -->
 <button onclick="runTimerTest('arr')">Time it!</button>
 
+
+---
+
+# DCE tip:
+
+```js
+var DEBUG = true       // Good :)
+if (DEBUG) // ...
+
+window.DEBUG = true    // Less good :(
+if (window.DEBUG) // ...
+```
 
 
 ---
@@ -636,7 +646,7 @@ foo(p)
 ```
 <!-- .element: class="fragment" data-fragment-index="1" -->
 
-# :(
+# （ -_-）
 <!-- .element: class="fragment" data-fragment-index="2" -->
 
 
@@ -645,7 +655,7 @@ foo(p)
 # Takeaways
 
  * Make classes declare all properties at init <!-- .element: class="fragment" data-fragment-index="1" -->
- * Don't sweat the details (e.g. constructors vs. prototypes) <!-- .element: class="fragment" data-fragment-index="2" -->
+ * Don't sweat stuff like constructors vs. prototypes <!-- .element: class="fragment" data-fragment-index="2" -->
 
 
 
@@ -653,7 +663,8 @@ foo(p)
 
 # Special case: Arrays
 
-> "Just an object with a magical `length` property"
+> "Just an object with a  
+> magical `length` property"
 
 
 
@@ -664,13 +675,14 @@ foo(p)
 
 <br>
 
- * (fastest)
- * **All elements same type, filled from 0, no holes** <!-- .element: class="fragment" data-fragment-index="1" -->
- *  <!-- .element: class="fragment" data-fragment-index="3" -->
- * (let's not worry about the others) <!-- .element: class="fragment" data-fragment-index="3" -->
- *  <!-- .element: class="fragment" data-fragment-index="3" -->
- * **Dictionary mode** <!-- .element: class="fragment" data-fragment-index="2" -->
- * (slowest)
+(fastest)
+
+ 1. **All elements same type, filled from 0, no holes** <!-- .element: class="fragment" data-fragment-index="1" -->
+ 1. *&nbsp;* <!-- .element: class="fragment" data-fragment-index="3" -->
+ 1. &nbsp; *(let's not worry about the rest)* <!-- .element: class="fragment" data-fragment-index="3" -->
+ 1. *&nbsp;* <!-- .element: class="fragment" data-fragment-index="3" -->
+
+(slowest)
 
 
 ---
@@ -681,7 +693,7 @@ foo(p)
 
  * Avoid holes or mixed types
  * Don't preallocate
- * Don't delete elements (`pop` is fine)
+ * Don't `delete` elements (`pop` is fine)
  * Never access out of bounds!
 
 
@@ -690,12 +702,15 @@ foo(p)
 
 # Conclusions
 
+---
+
 
 * ~97% of the time, **simple idiomatic code wins**  
-* Don't microbenchmark. Profile real code! <!-- .element: class="fragment" data-fragment-index="1" -->
+* Don't micro-benchmark. Profile real code! <!-- .element: class="fragment" data-fragment-index="1" -->
 * Fix bailouts first <!-- .element: class="fragment" data-fragment-index="2" -->
 * Adding type hints never hurts <!-- .element: class="fragment" data-fragment-index="3" -->
-* Pure functions with predictable types reach ~native speeds <!-- .element: class="fragment" data-fragment-index="4" -->
+* Pure functions with predictable types get  
+close to native speeds <!-- .element: class="fragment" data-fragment-index="4" -->
 * Clever hacks (eg with scope) are usually slow <!-- .element: class="fragment" data-fragment-index="5" -->
 * Ignore these rules for code that isn't hot <!-- .element: class="fragment" data-fragment-index="6" -->
 
