@@ -8,8 +8,8 @@
     "serve": "node ./node_modules/reveal-md/bin/cli.js slides.md --title 'JS Performance' --scripts script.js --disableAutoOpen",
     "browse": "'/Applications/Google Chrome.app/Contents/MacOS/Google Chrome' --incognito --js-flags='--allow-natives-syntax' http://localhost:1948/slides.md",
     "build": "npm run copy; npm run static",
-    "copy": "cp script.js www/scripts/; cp img/* www/img/",
-    "static": "node ./node_modules/reveal-md/bin/cli.js slides.md --title 'JS Performance' --scripts script.js --static > www/index.html"
+    "copy": "cp script.js docs/scripts/; cp img/* docs/img/",
+    "static": "node ./node_modules/reveal-md/bin/cli.js slides.md --title 'JS Performance' --scripts script.js --static > docs/index.html"
   },
   "author": "Andy Hall",
   "license": "MIT",

@@ -12,7 +12,7 @@ Talk on JS performance optimization.
 > cd js-perf-talk
 > npm install
 > npm start         # to give the presentation. Completely close Chrome first!
-> npm run build     # builds static output to ./www
+> npm run build     # builds static output to ./docs
 > npm run serve     # serves locally on port 1948, without opening a browser
 > npm run browse    # opens Chrome with useful v8 flags
 ```
