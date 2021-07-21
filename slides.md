@@ -725,7 +725,7 @@ close to native speeds <!-- .element: class="fragment" data-fragment-index="4" -
 
 # Thanks!
 
-## [github/andyhall](https://github.com/andyhall)
+## [github/fenomas](https://github.com/fenomas)
 
 ## [@fenomas](https://twitter.com/fenomas)
 

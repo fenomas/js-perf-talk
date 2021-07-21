@@ -2,7 +2,7 @@
 
 Talk on JS performance optimization.
 
-**[Live demo](https://andyhall.github.io/js-perf-talk/)** 
+**[Live demo](https://fenomas.github.io/js-perf-talk/)** 
 
 
 ### Usage
